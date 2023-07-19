@@ -1,8 +1,17 @@
 window.onload = function(){
     // aos 셋팅
     AOS.init();
+    let modalWrap = document.querySelector(".modal-wrap");
+    let modalClose = document.querySelector(".modal-close");
+    modalClose.addEventListener("click", function(){
+        htmlRoot.classList.remove("active")
+        modalWrap.classList.add("fadeOut");
+        modalWrap.addEventListener("animationend", function(){
+            modalWrap.style.display = "none"
+        })
+    })
 
-    
+
     // 상단 스크롤 기능
     const header = document.querySelector(".header");
     const mbt = document.querySelector(".mbt");

@@ -39,8 +39,81 @@ body {
     color: #222;
     word-break: keep-all;
 }
+
+/* 안내창 T */
+.modal-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 11111;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.modal-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-close{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: #3056a1;
+    padding: 10px;
+    border: none;
+    color: #fff;
+}
+.fadeOut{
+    animation: fadeOut 0.3s forwards;
+}
+@keyframes fadeOut{
+    100%{
+        opacity: 0;
+    }
+}
+
+/* 안내창 */
+.modal-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(87, 73, 73, 0.5);
+    z-index: 1111;
+    line-height: 1.5;
+    display: none;
+    
+}
+
+.info-modal {
+    padding: 30px 50px;
+    position: absolute;
+    /* width: 100%;
+    max-width: 500px;
+    height: 90%;
+    max-height: 500px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    background-color: #fff;
+    display: none;
+    
+}
 /* gotop */
-.gotop{
+.gotop {
     position: fixed;
     z-index: 999;
     width: 60px;
@@ -60,14 +133,17 @@ body {
     visibility: hidden;
     transition: .3s;
 }
-.gotop.active{
+
+.gotop.active {
     opacity: 1;
     visibility: visible;
     bottom: 20px;
 }
-.gotop.active-footer{
+
+.gotop.active-footer {
     bottom: 320px;
 }
+
 /* 레이아웃 */
 .wrap {
     position: relative;
@@ -666,7 +742,7 @@ body {
     .service {
         padding: 70px 0 80px;
     }
-
+    .service-title{font-size: 24px;}
     .service-box-1 {
         height: 100vw;
         max-width: 640px;
@@ -707,25 +783,30 @@ body {
     font-size: 44px;
     line-height: 1.35;
 }
-.about-title span{
+
+.about-title span {
     color: #3a68b2;
 }
-.about-right p{
+
+.about-right p {
     font-size: 16px;
     color: #222;
     margin-bottom: 25px;
 }
-.about-right .about-txt-main{
+
+.about-right .about-txt-main {
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 45px;
     line-height: 1.35;
 }
-.about-txt-main span{
+
+.about-txt-main span {
     color: #3a68b2;
     font-weight: 700;
 }
-.about-link{
+
+.about-link {
     position: relative;
     border-bottom: 1px solid #222;
     height: 50px;
@@ -738,47 +819,61 @@ body {
     font-size: 15px;
     line-height: 48px;
 }
-.about-link i{
+
+.about-link i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     transition: 0.3s;
     right: 10px;
 }
-.about-link:hover i{
+
+.about-link:hover i {
     right: 5px;
 }
-@media screen and (max-width: 1024px){
-    .about{
+
+@media screen and (max-width: 1024px) {
+    .about {
         /* 700/1420 *100 = 49.25987vw */
         height: 49.2957vw;
         padding: 60px 0;
     }
-    
+
 }
-@media screen and (max-width: 1024px){
-    .about{height: auto;}
+
+@media screen and (max-width: 640px) {
+    .about {
+        height: auto;
+    }
+
     .about .inner {
         text-align: center;
         grid-template-columns: 1fr;
     }
-    .about-title{
+
+    .about-title {
+        font-size: 26px;
         margin-bottom: 40px;
     }
-    .about-link{
+
+    .about-link {
         margin: 0 auto;
         margin-bottom: 80px;
     }
-    
+
 }
 
 
 /* 비즈니스 */
-.business{position: relative;}
-.sw-business{
+.business {
+    position: relative;
+}
+
+.sw-business {
     height: 400px;
 }
-.sw-business a{
+
+.sw-business a {
     position: relative;
     display: block;
     width: 100%;
@@ -788,45 +883,64 @@ body {
     border-right: 1px solid #dadfe6;
     transition: 0.2s;
 }
-.sw-business a h2{
+
+.sw-business a h2 {
     font-size: 28px;
     margin-bottom: 14px;
     transition: 0.2s;
 }
-.sw-business a p{
+
+.sw-business a p {
     margin-bottom: 42px;
     font-size: 17px;
     opacity: 0.8;
     line-height: 1.4;
     transition: 0.2s;
 }
-.sw-business a span{
+
+.sw-business a span {
     display: block;
     width: 90px;
     line-height: 50px;
     text-align: center;
-    font-size: 15px; 
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: -1px;
     border-bottom: 2px solid #222;
     transition: 0.3s;
 }
-.sw-business a img{
+
+.sw-business a img {
     position: absolute;
     right: 0;
     bottom: 0;
     width: 46%;
     max-width: 317px;
 }
-.sw-business a:hover{color: #fff;}
-.sw-business a:hover span{border-bottom: 2px solid #fff;}
-.sw-business a.business-bg-1:hover{background-color: #3891b2;}
-.sw-business a.business-bg-2:hover{background-color: #db574f;}
-.sw-business a.business-bg-3:hover{background-color: #f0b23a;}
 
-.business-modal{
+.sw-business a:hover {
+    color: #fff;
+}
+
+.sw-business a:hover span {
+    border-bottom: 2px solid #fff;
+}
+
+.sw-business a.business-bg-1:hover {
+    background-color: #3891b2;
+}
+
+.sw-business a.business-bg-2:hover {
+    background-color: #db574f;
+}
+
+.sw-business a.business-bg-3:hover {
+    background-color: #f0b23a;
+}
+
+.business-modal {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     z-index: 11;
     width: 100%;
@@ -838,73 +952,112 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 1600px){
-    .sw-business a{padding: 30px;}
+@media screen and (max-width: 1600px) {
+    .sw-business a {
+        padding: 30px;
+    }
 }
-@media screen and (max-width: 1440px){
-    .sw-business a img{width: 70%;}
+
+@media screen and (max-width: 1440px) {
+    .sw-business a img {
+        width: 70%;
+    }
 }
-@media screen and (max-width: 1024px){
-    .sw-business a{padding: 60px;}
-    
-    .sw-business a h2{
+
+@media screen and (max-width: 1024px) {
+    .sw-business a {
+        padding: 60px;
+    }
+
+    .sw-business a h2 {
         font-size: 24px;
     }
-    .sw-business a p{
+
+    .sw-business a p {
         font-size: 16px;
     }
-    .sw-business a img{width: 60%;}
-    .business-modal{display: flex;}
+
+    .sw-business a img {
+        width: 60%;
+    }
+
+    .business-modal {
+        display: flex;
+    }
 }
-@media screen and (max-width: 640px){
-    .sw-business{height: 300px;}
-    .sw-business a{
+
+@media screen and (max-width: 640px) {
+    .sw-business {
+        height: 300px;
+    }
+
+    .sw-business a {
         padding: 25px 20px;
     }
-    .sw-business a p{font-size: 15px;}
-    .sw-business a span{
+
+    .sw-business a p {
+        font-size: 15px;
+    }
+
+    .sw-business a span {
         line-height: 40px;
         font-size: 14px;
     }
-    .sw-business a img{width: 50%;}
+
+    .sw-business a img {
+        width: 50%;
+    }
 }
-.footer{
+
+.footer {
     position: relative;
     display: block;
     background-color: #222;
     padding: 60px 0;
 }
-.footer br.mb{display: none;}
-.footer .inner{}
-.footer-list{
+
+.footer br.mb {
+    display: none;
+}
+
+.footer .inner {}
+
+.footer-list {
     text-align: center;
     font-size: 15px;
     color: #666;
     line-height: 1.6;
 }
-.footer-list li{
+
+.footer-list li {
     padding: 5px 0;
 }
-.footer-list li a{
+
+.footer-list li a {
     color: #666;
 }
-.footer-list li a:hover{
+
+.footer-list li a:hover {
     color: #eee;
     text-decoration: underline;
 }
-.footer-list span{
+
+.footer-list span {
     display: inline-block;
     white-space: nowrap;
 }
-.footer-list p{
+
+.footer-list p {
     padding-top: 20px;
 }
-.footer-bar{
+
+.footer-bar {
     display: inline-block;
     position: relative;
     padding: 0 18px;
 }
-.footer-bar::before{
+
+.footer-bar::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -915,8 +1068,21 @@ body {
 
 }
 
-@media screen and (max-width: 640px){
-    .footer br.mb{display: block;}
-    .footer-list span{display: block;}
-    .footer-bar{display: none;}
+.footer-list li:last-child {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+    .footer br.mb {
+        display: block;
+    }
+
+    .footer-list span {
+        display: block;
+    }
+
+    .footer-bar {
+        display: none;
+    }
+
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="active">
 
 <head>
     <meta charset="UTF-8">
@@ -65,6 +65,29 @@
 <body>
 
     <!-- 안내창 -->
+    <div class="modal-mask">
+        <div class="info-modal">
+            <ul>
+                <li>해당 사이트는 스터디용으로 제작되었으며, 모든 리소스의 저작권은 원작자에게 있습니다</li>
+                <li>• 본 사이트는 Chrome에 최적화되어 있습니다</li>
+                <li>• 해당 사이트와 관련한 문제가 있으면 00으로 연락바랍니다.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 안내창 -->
+    <div class="modal-wrap">
+        <div class="modal-main">
+            <div class="modal-txt">
+                해당 사이트는 스터디용으로 제작되었으며, 모든 리소스의 저작권은
+                원저작자에게 있습니다. <br />
+                * 본 사이트는 Chrome 에 최적화되어 있습니다. <br />
+                * 해당 사이트와 관련한 문제가 있으면
+                <a href="email">여기</a>
+            </div>
+            <button class="modal-close">닫기</button>
+        </div>
+    </div>
+    
     <!-- gotop -->
     <button class="gotop">
         <i class="top__icon xi-long-arrow-up"></i>
@@ -204,7 +227,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="service-box-2" data-aos="flip-left" data-aos-delay="1500">
+                    <div class="service-box-2" data-aos="flip-left" data-aos-delay="1000">
                         <a href="#">
                             <div class="service-bg service-bg-2"></div>
                             <div class="service-box-wrap">
@@ -221,7 +244,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="service-box-3" data-aos="flip-left" data-aos-delay="2000">
+                    <div class="service-box-3" data-aos="flip-left" data-aos-delay="1500">
                         <a href="#">
                             <div class="service-bg service-bg-3"></div>
                             <div class="service-box-wrap">
@@ -244,7 +267,7 @@
 
         </section>
         <!-- 소개 -->
-        <section class="about">
+        <section class="about" data-aos="fade-up" data-aos-duration="1000">
             <div class="inner">
                 <h2 class="about-title">
                     통신 서비스를 하나로 <br>
@@ -270,7 +293,7 @@
             </div>
         </section>
         <!-- 비즈니스 -->
-        <section class="business">
+        <section class="business" data-aos="fade-up" data-aos-duration="1000">
             <div class="swiper sw-business">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -322,7 +345,7 @@
                 <ul class="footer-list">
                     <li>
                         <span>상호 : ㈜와이드모바일<em class="footer-bar"></em></span>
-                        <span>통신판매업신고번호 : 제2018-서울서대문-0301호<em class="footer-bar"></em></span>
+                        <span>통신판매업신고번호 : 제2018-<br class="mb">서울서대문-0301호<em class="footer-bar"></em></span>
                         <span>사업자등록번호 : 121-81-66458</span>
                     </li>
                     <li>
